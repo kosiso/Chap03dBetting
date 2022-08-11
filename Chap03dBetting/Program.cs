@@ -4,7 +4,7 @@ namespace Chap03dBetting
 {
     internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Random random = new();
             double odds = 0.75;
@@ -15,7 +15,7 @@ namespace Chap03dBetting
             while (true)
             {
                 WriteLine($"{player.Name} has {player.Cash} Naira");
-                placeBet:
+            placeBet:
                 WriteLine($"How much money do you want to bet? If not betting, enter a blank line");
                 string howMuch = ReadLine();
                 if (string.IsNullOrEmpty(howMuch))
