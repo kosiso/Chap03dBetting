@@ -7,11 +7,8 @@ namespace Chap03dBetting
     /// </summary>
     internal class Guy
     {
-        private string name;
-        private int cash;
-
-        public string Name { get => name; set => name = value; }
-        public int Cash { get => cash; set => cash = value; }
+        public string? Name { get; set; }
+        public int Cash { get; set; }
 
         /// <summary>
         /// Write the name and amount of cash of each Guy object
