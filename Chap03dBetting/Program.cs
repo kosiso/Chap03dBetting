@@ -17,7 +17,7 @@ namespace Chap03dBetting
                 WriteLine($"{player.Name} has {player.Cash} Naira");
             placeBet:
                 WriteLine($"How much money do you want to bet? If not betting, enter a blank line");
-                string howMuch = ReadLine();
+                string? howMuch = ReadLine();
                 if (string.IsNullOrEmpty(howMuch))
                 {
                     return;
