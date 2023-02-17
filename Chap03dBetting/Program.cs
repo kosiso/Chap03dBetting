@@ -8,22 +8,22 @@ namespace Chap03dBetting
         {
             Random random = new();
             double odds = 0.75;
-            Guy player = new() { Name = "The player", Cash = 100 };
+            Bettor player = new() { Name = "Kelvin", Cash = 100 };
 
-            WriteLine($"Welcome esteemed client to the House. Today's odds is {odds}");
+            WriteLine($"Welcome {player.Name} to the House. Today's odds is {odds}\n");
 
             while (true)
             {
-                WriteLine($"{player.Name} has {player.Cash} Naira");
+                player.WriteMyInfo();
             placeBet:
                 WriteLine($"How much money do you want to bet? If not betting, enter a blank line");
-                string? howMuch = ReadLine();
-                if (string.IsNullOrEmpty(howMuch))
+                string? howMuchBetted = ReadLine();
+                if (string.IsNullOrEmpty(howMuchBetted))
                 {
                     return;
                 }
 
-                if (int.TryParse(howMuch, out int amount))
+                if (int.TryParse(howMuchBetted, out int amount))
                 {
                     if (amount > player.Cash)
                     {
@@ -36,8 +36,7 @@ namespace Chap03dBetting
                         goto placeBet;
                     }
                     int pot = player.GiveCash(amount) * 2;
-                    double bet = random.NextDouble();
-                    if (bet > odds)
+                    if (random.NextDouble() > odds)
                     {
                         player.ReceiveCash(pot);
                         WriteLine($"Bet won! You have won {pot} Naira.\n");

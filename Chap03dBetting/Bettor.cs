@@ -3,15 +3,15 @@
 namespace Chap03dBetting
 {
     /// <summary>
-    /// Calculate and transfer a specified amount between to Guy objects
+    /// Calculate and transfer a specified amount between to Bettor objects
     /// </summary>
-    internal class Guy
+    internal class Bettor
     {
         public string? Name { get; set; }
         public int Cash { get; set; }
 
         /// <summary>
-        /// Write the name and amount of cash of each Guy object
+        /// Write the name and amount of cash of each Bettor object
         /// </summary>
         public void WriteMyInfo()
         {
@@ -19,7 +19,7 @@ namespace Chap03dBetting
         }
 
         /// <summary>
-        /// Give a specified amount to the other Guy object
+        /// Give a specified amount to the other Bettor object
         /// </summary>
         /// <param name="amount">Amount to be given</param>
         /// <returns>Amount given</returns>
@@ -40,7 +40,7 @@ namespace Chap03dBetting
         }
 
         /// <summary>
-        /// Receive a specified amount from the other Guy object
+        /// Receive a specified amount from the other Bettor object
         /// </summary>
         /// <param name="amount">Amount received</param>
         public void ReceiveCash(int amount)
